@@ -2,27 +2,21 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: localhost
+  username: <your_username>
+  password: <your_password>
+  reconnect: true
 
 development:
   <<: *default
-  database: timesheet
-  username: 
-  password: 
-  reconnect: true
+  database: timesheet_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: timesheet
-  username:
-  password:
-  reconnect: true
+  database: timesheet_test
 
 production:
   <<: *default
-  database: timesheet
-  username:
-  password:
-  reconnect: true
+  database: timesheet_pro
